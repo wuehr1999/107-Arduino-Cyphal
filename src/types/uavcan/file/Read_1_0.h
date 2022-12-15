@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/file/408.Read.1.0.dsdl
-// Generated at:  2022-12-15 22:37:24.421333 UTC
+// Generated at:  2022-12-15 23:14:06.734814 UTC
 // Is deprecated: yes
 // Fixed port-ID: 408
 // Full name:     uavcan.file.Read

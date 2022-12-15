@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/si/sample/energy/Scalar.1.0.dsdl
-// Generated at:  2022-12-15 22:37:24.680310 UTC
+// Generated at:  2022-12-15 23:14:06.220744 UTC
 // Is deprecated: no
 // Fixed port-ID: None
 // Full name:     uavcan.si.sample.energy.Scalar

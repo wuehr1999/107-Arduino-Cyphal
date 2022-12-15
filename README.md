@@ -58,9 +58,9 @@ void loop() {
 ### Contribution
 #### How to add missing wrappers
 
-#### Docker automatization
+##### Docker automatization
 
-Step 1-4 of the following instruction are also automated in a Docker container. The container can be built and executed with the following commands:
+Step 1-3 of the following instruction are also automated in a Docker container. The container can be built and executed with the following commands:
 ```bash
 cd extras/script
 ./build_docker.sh

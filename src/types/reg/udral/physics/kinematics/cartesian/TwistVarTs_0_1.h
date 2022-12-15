@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/reg/udral/physics/kinematics/cartesian/TwistVarTs.0.1.dsdl
-// Generated at:  2022-12-15 22:37:26.479172 UTC
+// Generated at:  2022-12-15 23:14:08.224855 UTC
 // Is deprecated: no
 // Fixed port-ID: None
 // Full name:     reg.udral.physics.kinematics.cartesian.TwistVarTs

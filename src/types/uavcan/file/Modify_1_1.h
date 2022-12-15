@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/file/407.Modify.1.1.dsdl
-// Generated at:  2022-12-15 22:37:24.384931 UTC
+// Generated at:  2022-12-15 23:14:06.701791 UTC
 // Is deprecated: no
 // Fixed port-ID: 407
 // Full name:     uavcan.file.Modify

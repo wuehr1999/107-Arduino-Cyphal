@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/time/7168.Synchronization.1.0.dsdl
-// Generated at:  2022-12-15 22:37:24.244772 UTC
+// Generated at:  2022-12-15 23:14:06.042399 UTC
 // Is deprecated: no
 // Fixed port-ID: 7168
 // Full name:     uavcan.time.Synchronization

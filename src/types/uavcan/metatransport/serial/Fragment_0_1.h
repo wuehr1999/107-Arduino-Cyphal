@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/metatransport/serial/Fragment.0.1.dsdl
-// Generated at:  2022-12-15 22:37:25.020046 UTC
+// Generated at:  2022-12-15 23:14:06.608049 UTC
 // Is deprecated: yes
 // Fixed port-ID: None
 // Full name:     uavcan.metatransport.serial.Fragment
