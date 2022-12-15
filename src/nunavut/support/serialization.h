@@ -75,6 +75,7 @@ static_assert(sizeof(size_t) >= sizeof(size_t),
 // Most platforms can simply define "NUNAVUT_ASSERT(x)=assert(x)" (<assert.h> is always included by Nunavut).
 #   error "You must either define NUNAVUT_ASSERT or you need to disable assertions" \
           " when generating serialization support code using Nunavut language options"
+# define NUNAVUT_ASSERT(expr) assert(expr)
 #endif
 
 // This code is endianness-invariant. Use target_endianness='little' to generate little-endian-optimized code.
