@@ -25,4 +25,3 @@ RUN apt-get install -y bash
 RUN apt-get install -y git
 RUN apt-get install -y python3-pip
 RUN pip3 install nunavut
-
