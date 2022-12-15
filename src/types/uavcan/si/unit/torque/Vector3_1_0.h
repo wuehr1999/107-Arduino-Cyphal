@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/si/unit/torque/Vector3.1.0.dsdl
-// Generated at:  2022-12-15 22:20:33.956441 UTC
+// Generated at:  2022-12-15 22:37:24.524774 UTC
 // Is deprecated: no
 // Fixed port-ID: None
 // Full name:     uavcan.si.unit.torque.Vector3

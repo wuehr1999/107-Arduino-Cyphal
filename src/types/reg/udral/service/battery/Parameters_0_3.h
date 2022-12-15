@@ -1,4 +1,4 @@
-// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://uavcan.org.
+// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://opencyphal.org.
 // You shouldn't attempt to edit this file.
 //
 // Checking this file under version control is not recommended unless it is used as part of a high-SIL
@@ -7,31 +7,42 @@
 // To avoid conflicts with definitions given in the source DSDL file, all entities created by the code generator
 // are named with an underscore at the end, like foo_bar_().
 //
-// Generator:     nunavut-1.1.0 (serialization was enabled)
+// Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/reg/udral/service/battery/Parameters.0.3.dsdl
-// Generated at:  2022-12-15 22:24:29.128707 UTC
+// Generated at:  2022-12-15 22:37:26.302492 UTC
 // Is deprecated: no
 // Fixed port-ID: None
 // Full name:     reg.udral.service.battery.Parameters
 // Version:       0.3
+//
+// Platform
+//     python_implementation:  CPython
+//     python_version:  3.10.6
+//     python_release_level:  final
+//     python_build:  ('main', 'Nov 14 2022 16:10:14')
+//     python_compiler:  GCC 11.3.0
+//     python_revision:
+//     python_xoptions:  {}
+//     runtime_platform:  Linux-5.15.0-56-generic-x86_64-with-glibc2.35
 //
 // Language Options
 //     target_endianness:  any
 //     omit_float_serialization_support:  False
 //     enable_serialization_asserts:  True
 //     enable_override_variable_array_capacity:  False
+//     cast_format:  (({type}) {value})
 
 #ifndef REG_UDRAL_SERVICE_BATTERY_PARAMETERS_0_3_INCLUDED_
 #define REG_UDRAL_SERVICE_BATTERY_PARAMETERS_0_3_INCLUDED_
 
 #include <nunavut/support/serialization.h>
 #include <types/reg/udral/service/battery/Technology_0_1.h>
+#include <stdint.h>
+#include <stdlib.h>
 #include <types/uavcan/si/unit/electric_charge/Scalar_1_0.h>
 #include <types/uavcan/si/unit/electric_current/Scalar_1_0.h>
 #include <types/uavcan/si/unit/mass/Scalar_1_0.h>
 #include <types/uavcan/si/unit/voltage/Scalar_1_0.h>
-#include <stdint.h>
-#include <stdlib.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
               "/tmp/public_regulated_data_types/reg/udral/service/battery/Parameters.0.3.dsdl is trying to use a serialization library that was compiled with "
@@ -45,12 +56,15 @@ static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 1
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_OVERRIDE_VARIABLE_ARRAY_CAPACITY == 0,
               "/tmp/public_regulated_data_types/reg/udral/service/battery/Parameters.0.3.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
+static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_CAST_FORMAT == 2368206204,
+              "/tmp/public_regulated_data_types/reg/udral/service/battery/Parameters.0.3.dsdl is trying to use a serialization library that was compiled with "
+              "different language options. This is dangerous and therefore not allowed." );
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-/// This type does not have a fixed port-ID. See https://forum.uavcan.org/t/choosing-message-and-service-ids/889
+/// This type does not have a fixed port-ID. See https://forum.opencyphal.org/t/choosing-message-and-service-ids/889
 #define reg_udral_service_battery_Parameters_0_3_HAS_FIXED_PORT_ID_ false
 
 #define reg_udral_service_battery_Parameters_0_3_FULL_NAME_             "reg.udral.service.battery.Parameters"
@@ -610,9 +624,14 @@ static inline int8_t reg_udral_service_battery_Parameters_0_3_serialize_(
         buffer[offset_bits / 8U] = (uint8_t)(obj->name.count);  // C std, 6.3.1.3 Signed and unsigned integers
         offset_bits += 8U;
         NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-        // Optimization prospect: this item is aligned at the byte boundary, so it is possible to use memmove().
-        nunavutCopyBits(&buffer[0], offset_bits, obj->name.count * 8U, &obj->name.elements[0], 0U);
-        offset_bits += obj->name.count * 8U;
+        for (size_t _index1_ = 0U; _index1_ < obj->name.count; ++_index1_)
+        {
+            NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+            NUNAVUT_ASSERT((offset_bits + 8ULL) <= (capacity_bytes * 8U));
+            // Saturation code not emitted -- native representation matches the serialized representation.
+            buffer[offset_bits / 8U] = (uint8_t)(obj->name.elements[_index1_]);  // C std, 6.3.1.3 Signed and unsigned integers
+            offset_bits += 8U;
+        }
     }
 
     if (offset_bits % 8U != 0U)  // Pad to 8 bits. TODO: Eliminate redundant padding checks.
@@ -658,11 +677,15 @@ static inline int8_t reg_udral_service_battery_Parameters_0_3_serialize_(
 ///
 /// @returns Negative on error, zero on success.
 static inline int8_t reg_udral_service_battery_Parameters_0_3_deserialize_(
-    reg_udral_service_battery_Parameters_0_3* const out_obj, const uint8_t* const buffer, size_t* const inout_buffer_size_bytes)
+    reg_udral_service_battery_Parameters_0_3* const out_obj, const uint8_t* buffer, size_t* const inout_buffer_size_bytes)
 {
-    if ((out_obj == NULL) || (buffer == NULL) || (inout_buffer_size_bytes == NULL))
+    if ((out_obj == NULL) || (inout_buffer_size_bytes == NULL) || ((buffer == NULL) && (0 != *inout_buffer_size_bytes)))
     {
         return -NUNAVUT_ERROR_INVALID_ARGUMENT;
+    }
+    if (buffer == NULL)
+    {
+        buffer = (const uint8_t*)"";
     }
 
     const size_t capacity_bytes = *inout_buffer_size_bytes;
@@ -713,7 +736,7 @@ static inline int8_t reg_udral_service_battery_Parameters_0_3_deserialize_(
     // uavcan.si.unit.voltage.Scalar.1.0[2] design_cell_voltage_min_max
     NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-    for (size_t _index1_ = 0U; _index1_ < 2UL; ++_index1_)
+    for (size_t _index2_ = 0U; _index2_ < 2UL; ++_index2_)
     {
         NUNAVUT_ASSERT(offset_bits % 8U == 0U);
         NUNAVUT_ASSERT(offset_bits % 8U == 0U);
@@ -721,7 +744,7 @@ static inline int8_t reg_udral_service_battery_Parameters_0_3_deserialize_(
             size_t _size_bytes13_ = (size_t)(capacity_bytes - nunavutChooseMin((offset_bits / 8U), capacity_bytes));
             NUNAVUT_ASSERT(offset_bits % 8U == 0U);
             const int8_t _err29_ = uavcan_si_unit_voltage_Scalar_1_0_deserialize_(
-                &out_obj->design_cell_voltage_min_max[_index1_], &buffer[offset_bits / 8U], &_size_bytes13_);
+                &out_obj->design_cell_voltage_min_max[_index2_], &buffer[offset_bits / 8U], &_size_bytes13_);
             if (_err29_ < 0)
             {
                 return _err29_;
@@ -924,8 +947,19 @@ static inline int8_t reg_udral_service_battery_Parameters_0_3_deserialize_(
         return -NUNAVUT_ERROR_REPRESENTATION_BAD_ARRAY_LENGTH;
     }
     NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-    nunavutGetBits(&out_obj->name.elements[0], &buffer[0], capacity_bytes, offset_bits, out_obj->name.count * 8U);
-    offset_bits += out_obj->name.count * 8U;
+    for (size_t _index3_ = 0U; _index3_ < out_obj->name.count; ++_index3_)
+    {
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        if ((offset_bits + 8U) <= capacity_bits)
+        {
+            out_obj->name.elements[_index3_] = buffer[offset_bits / 8U] & 255U;
+        }
+        else
+        {
+            out_obj->name.elements[_index3_] = 0U;
+        }
+        offset_bits += 8U;
+    }
 
     offset_bits = (offset_bits + 7U) & ~(size_t) 7U;  // Align on 8 bits.
     NUNAVUT_ASSERT(offset_bits % 8U == 0U);

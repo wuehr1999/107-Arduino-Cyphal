@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/reg/udral/service/actuator/esc/_.0.1.dsdl
-// Generated at:  2022-12-15 22:20:36.069440 UTC
+// Generated at:  2022-12-15 22:37:26.289539 UTC
 // Is deprecated: no
 // Fixed port-ID: None
 // Full name:     reg.udral.service.actuator.esc._

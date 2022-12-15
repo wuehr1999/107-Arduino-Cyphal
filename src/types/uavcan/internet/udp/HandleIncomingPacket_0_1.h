@@ -1,4 +1,4 @@
-// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://uavcan.org.
+// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://opencyphal.org.
 // You shouldn't attempt to edit this file.
 //
 // Checking this file under version control is not recommended unless it is used as part of a high-SIL
@@ -7,19 +7,30 @@
 // To avoid conflicts with definitions given in the source DSDL file, all entities created by the code generator
 // are named with an underscore at the end, like foo_bar_().
 //
-// Generator:     nunavut-1.1.0 (serialization was enabled)
+// Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/internet/udp/500.HandleIncomingPacket.0.1.dsdl
-// Generated at:  2022-12-15 22:23:49.756500 UTC
+// Generated at:  2022-12-15 22:37:24.212018 UTC
 // Is deprecated: yes
 // Fixed port-ID: 500
 // Full name:     uavcan.internet.udp.HandleIncomingPacket
 // Version:       0.1
+//
+// Platform
+//     python_implementation:  CPython
+//     python_version:  3.10.6
+//     python_release_level:  final
+//     python_build:  ('main', 'Nov 14 2022 16:10:14')
+//     python_compiler:  GCC 11.3.0
+//     python_revision:
+//     python_xoptions:  {}
+//     runtime_platform:  Linux-5.15.0-56-generic-x86_64-with-glibc2.35
 //
 // Language Options
 //     target_endianness:  any
 //     omit_float_serialization_support:  False
 //     enable_serialization_asserts:  True
 //     enable_override_variable_array_capacity:  False
+//     cast_format:  (({type}) {value})
 
 //           _____  ______ _____  _____  ______ _____       _______ ______ _____
 //          |  __ `|  ____|  __ `|  __ `|  ____/ ____|   /`|__   __|  ____|  __ `
@@ -47,6 +58,9 @@ static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 1
               "/tmp/public_regulated_data_types/uavcan/internet/udp/500.HandleIncomingPacket.0.1.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_OVERRIDE_VARIABLE_ARRAY_CAPACITY == 0,
+              "/tmp/public_regulated_data_types/uavcan/internet/udp/500.HandleIncomingPacket.0.1.dsdl is trying to use a serialization library that was compiled with "
+              "different language options. This is dangerous and therefore not allowed." );
+static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_CAST_FORMAT == 2368206204,
               "/tmp/public_regulated_data_types/uavcan/internet/udp/500.HandleIncomingPacket.0.1.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 
@@ -152,9 +166,14 @@ static inline int8_t uavcan_internet_udp_HandleIncomingPacket_Request_0_1_serial
         }
         offset_bits += 16U;
         NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-        // Optimization prospect: this item is aligned at the byte boundary, so it is possible to use memmove().
-        nunavutCopyBits(&buffer[0], offset_bits, obj->payload.count * 8U, &obj->payload.elements[0], 0U);
-        offset_bits += obj->payload.count * 8U;
+        for (size_t _index0_ = 0U; _index0_ < obj->payload.count; ++_index0_)
+        {
+            NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+            NUNAVUT_ASSERT((offset_bits + 8ULL) <= (capacity_bytes * 8U));
+            // Saturation code not emitted -- native representation matches the serialized representation.
+            buffer[offset_bits / 8U] = (uint8_t)(obj->payload.elements[_index0_]);  // C std, 6.3.1.3 Signed and unsigned integers
+            offset_bits += 8U;
+        }
     }
 
     if (offset_bits % 8U != 0U)  // Pad to 8 bits. TODO: Eliminate redundant padding checks.
@@ -200,11 +219,15 @@ static inline int8_t uavcan_internet_udp_HandleIncomingPacket_Request_0_1_serial
 ///
 /// @returns Negative on error, zero on success.
 static inline int8_t uavcan_internet_udp_HandleIncomingPacket_Request_0_1_deserialize_(
-    uavcan_internet_udp_HandleIncomingPacket_Request_0_1* const out_obj, const uint8_t* const buffer, size_t* const inout_buffer_size_bytes)
+    uavcan_internet_udp_HandleIncomingPacket_Request_0_1* const out_obj, const uint8_t* buffer, size_t* const inout_buffer_size_bytes)
 {
-    if ((out_obj == NULL) || (buffer == NULL) || (inout_buffer_size_bytes == NULL))
+    if ((out_obj == NULL) || (inout_buffer_size_bytes == NULL) || ((buffer == NULL) && (0 != *inout_buffer_size_bytes)))
     {
         return -NUNAVUT_ERROR_INVALID_ARGUMENT;
+    }
+    if (buffer == NULL)
+    {
+        buffer = (const uint8_t*)"";
     }
 
     const size_t capacity_bytes = *inout_buffer_size_bytes;
@@ -226,8 +249,19 @@ static inline int8_t uavcan_internet_udp_HandleIncomingPacket_Request_0_1_deseri
         return -NUNAVUT_ERROR_REPRESENTATION_BAD_ARRAY_LENGTH;
     }
     NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-    nunavutGetBits(&out_obj->payload.elements[0], &buffer[0], capacity_bytes, offset_bits, out_obj->payload.count * 8U);
-    offset_bits += out_obj->payload.count * 8U;
+    for (size_t _index1_ = 0U; _index1_ < out_obj->payload.count; ++_index1_)
+    {
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        if ((offset_bits + 8U) <= capacity_bits)
+        {
+            out_obj->payload.elements[_index1_] = buffer[offset_bits / 8U] & 255U;
+        }
+        else
+        {
+            out_obj->payload.elements[_index1_] = 0U;
+        }
+        offset_bits += 8U;
+    }
 
     offset_bits = (offset_bits + 7U) & ~(size_t) 7U;  // Align on 8 bits.
     NUNAVUT_ASSERT(offset_bits % 8U == 0U);
@@ -322,11 +356,15 @@ static inline int8_t uavcan_internet_udp_HandleIncomingPacket_Response_0_1_seria
 ///
 /// @returns Negative on error, zero on success.
 static inline int8_t uavcan_internet_udp_HandleIncomingPacket_Response_0_1_deserialize_(
-    uavcan_internet_udp_HandleIncomingPacket_Response_0_1* const out_obj, const uint8_t* const buffer, size_t* const inout_buffer_size_bytes)
+    uavcan_internet_udp_HandleIncomingPacket_Response_0_1* const out_obj, const uint8_t* buffer, size_t* const inout_buffer_size_bytes)
 {
-    if ((out_obj == NULL) || (buffer == NULL) || (inout_buffer_size_bytes == NULL))
+    if ((out_obj == NULL) || (inout_buffer_size_bytes == NULL) || ((buffer == NULL) && (0 != *inout_buffer_size_bytes)))
     {
         return -NUNAVUT_ERROR_INVALID_ARGUMENT;
+    }
+    if (buffer == NULL)
+    {
+        buffer = (const uint8_t*)"";
     }
 
     *inout_buffer_size_bytes = 0U;

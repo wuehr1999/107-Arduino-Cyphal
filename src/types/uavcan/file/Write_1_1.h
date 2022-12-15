@@ -1,4 +1,4 @@
-// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://uavcan.org.
+// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://opencyphal.org.
 // You shouldn't attempt to edit this file.
 //
 // Checking this file under version control is not recommended unless it is used as part of a high-SIL
@@ -7,29 +7,40 @@
 // To avoid conflicts with definitions given in the source DSDL file, all entities created by the code generator
 // are named with an underscore at the end, like foo_bar_().
 //
-// Generator:     nunavut-1.1.0 (serialization was enabled)
+// Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/file/409.Write.1.1.dsdl
-// Generated at:  2022-12-15 22:24:08.496052 UTC
+// Generated at:  2022-12-15 22:37:24.429842 UTC
 // Is deprecated: no
 // Fixed port-ID: 409
 // Full name:     uavcan.file.Write
 // Version:       1.1
+//
+// Platform
+//     python_implementation:  CPython
+//     python_version:  3.10.6
+//     python_release_level:  final
+//     python_build:  ('main', 'Nov 14 2022 16:10:14')
+//     python_compiler:  GCC 11.3.0
+//     python_revision:
+//     python_xoptions:  {}
+//     runtime_platform:  Linux-5.15.0-56-generic-x86_64-with-glibc2.35
 //
 // Language Options
 //     target_endianness:  any
 //     omit_float_serialization_support:  False
 //     enable_serialization_asserts:  True
 //     enable_override_variable_array_capacity:  False
+//     cast_format:  (({type}) {value})
 
 #ifndef UAVCAN_FILE_WRITE_1_1_INCLUDED_
 #define UAVCAN_FILE_WRITE_1_1_INCLUDED_
 
 #include <nunavut/support/serialization.h>
+#include <stdint.h>
+#include <stdlib.h>
 #include <types/uavcan/file/Error_1_0.h>
 #include <types/uavcan/file/Path_2_0.h>
 #include <types/uavcan/primitive/Unstructured_1_0.h>
-#include <stdint.h>
-#include <stdlib.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
               "/tmp/public_regulated_data_types/uavcan/file/409.Write.1.1.dsdl is trying to use a serialization library that was compiled with "
@@ -41,6 +52,9 @@ static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 1
               "/tmp/public_regulated_data_types/uavcan/file/409.Write.1.1.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_OVERRIDE_VARIABLE_ARRAY_CAPACITY == 0,
+              "/tmp/public_regulated_data_types/uavcan/file/409.Write.1.1.dsdl is trying to use a serialization library that was compiled with "
+              "different language options. This is dangerous and therefore not allowed." );
+static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_CAST_FORMAT == 2368206204,
               "/tmp/public_regulated_data_types/uavcan/file/409.Write.1.1.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 
@@ -234,11 +248,15 @@ static inline int8_t uavcan_file_Write_Request_1_1_serialize_(
 ///
 /// @returns Negative on error, zero on success.
 static inline int8_t uavcan_file_Write_Request_1_1_deserialize_(
-    uavcan_file_Write_Request_1_1* const out_obj, const uint8_t* const buffer, size_t* const inout_buffer_size_bytes)
+    uavcan_file_Write_Request_1_1* const out_obj, const uint8_t* buffer, size_t* const inout_buffer_size_bytes)
 {
-    if ((out_obj == NULL) || (buffer == NULL) || (inout_buffer_size_bytes == NULL))
+    if ((out_obj == NULL) || (inout_buffer_size_bytes == NULL) || ((buffer == NULL) && (0 != *inout_buffer_size_bytes)))
     {
         return -NUNAVUT_ERROR_INVALID_ARGUMENT;
+    }
+    if (buffer == NULL)
+    {
+        buffer = (const uint8_t*)"";
     }
 
     const size_t capacity_bytes = *inout_buffer_size_bytes;
@@ -423,11 +441,15 @@ static inline int8_t uavcan_file_Write_Response_1_1_serialize_(
 ///
 /// @returns Negative on error, zero on success.
 static inline int8_t uavcan_file_Write_Response_1_1_deserialize_(
-    uavcan_file_Write_Response_1_1* const out_obj, const uint8_t* const buffer, size_t* const inout_buffer_size_bytes)
+    uavcan_file_Write_Response_1_1* const out_obj, const uint8_t* buffer, size_t* const inout_buffer_size_bytes)
 {
-    if ((out_obj == NULL) || (buffer == NULL) || (inout_buffer_size_bytes == NULL))
+    if ((out_obj == NULL) || (inout_buffer_size_bytes == NULL) || ((buffer == NULL) && (0 != *inout_buffer_size_bytes)))
     {
         return -NUNAVUT_ERROR_INVALID_ARGUMENT;
+    }
+    if (buffer == NULL)
+    {
+        buffer = (const uint8_t*)"";
     }
 
     const size_t capacity_bytes = *inout_buffer_size_bytes;

@@ -1,4 +1,4 @@
-// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://uavcan.org.
+// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://opencyphal.org.
 // You shouldn't attempt to edit this file.
 //
 // Checking this file under version control is not recommended unless it is used as part of a high-SIL
@@ -7,19 +7,30 @@
 // To avoid conflicts with definitions given in the source DSDL file, all entities created by the code generator
 // are named with an underscore at the end, like foo_bar_().
 //
-// Generator:     nunavut-1.1.0 (serialization was enabled)
+// Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/si/unit/length/WideVector3.1.0.dsdl
-// Generated at:  2022-12-15 22:24:24.135985 UTC
+// Generated at:  2022-12-15 22:37:24.464185 UTC
 // Is deprecated: no
 // Fixed port-ID: None
 // Full name:     uavcan.si.unit.length.WideVector3
 // Version:       1.0
+//
+// Platform
+//     python_implementation:  CPython
+//     python_version:  3.10.6
+//     python_release_level:  final
+//     python_build:  ('main', 'Nov 14 2022 16:10:14')
+//     python_compiler:  GCC 11.3.0
+//     python_revision:
+//     python_xoptions:  {}
+//     runtime_platform:  Linux-5.15.0-56-generic-x86_64-with-glibc2.35
 //
 // Language Options
 //     target_endianness:  any
 //     omit_float_serialization_support:  False
 //     enable_serialization_asserts:  True
 //     enable_override_variable_array_capacity:  False
+//     cast_format:  (({type}) {value})
 
 #ifndef UAVCAN_SI_UNIT_LENGTH_WIDE_VECTOR3_1_0_INCLUDED_
 #define UAVCAN_SI_UNIT_LENGTH_WIDE_VECTOR3_1_0_INCLUDED_
@@ -40,12 +51,15 @@ static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 1
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_OVERRIDE_VARIABLE_ARRAY_CAPACITY == 0,
               "/tmp/public_regulated_data_types/uavcan/si/unit/length/WideVector3.1.0.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
+static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_CAST_FORMAT == 2368206204,
+              "/tmp/public_regulated_data_types/uavcan/si/unit/length/WideVector3.1.0.dsdl is trying to use a serialization library that was compiled with "
+              "different language options. This is dangerous and therefore not allowed." );
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-/// This type does not have a fixed port-ID. See https://forum.uavcan.org/t/choosing-message-and-service-ids/889
+/// This type does not have a fixed port-ID. See https://forum.opencyphal.org/t/choosing-message-and-service-ids/889
 #define uavcan_si_unit_length_WideVector3_1_0_HAS_FIXED_PORT_ID_ false
 
 #define uavcan_si_unit_length_WideVector3_1_0_FULL_NAME_             "uavcan.si.unit.length.WideVector3"
@@ -170,11 +184,15 @@ static inline int8_t uavcan_si_unit_length_WideVector3_1_0_serialize_(
 ///
 /// @returns Negative on error, zero on success.
 static inline int8_t uavcan_si_unit_length_WideVector3_1_0_deserialize_(
-    uavcan_si_unit_length_WideVector3_1_0* const out_obj, const uint8_t* const buffer, size_t* const inout_buffer_size_bytes)
+    uavcan_si_unit_length_WideVector3_1_0* const out_obj, const uint8_t* buffer, size_t* const inout_buffer_size_bytes)
 {
-    if ((out_obj == NULL) || (buffer == NULL) || (inout_buffer_size_bytes == NULL))
+    if ((out_obj == NULL) || (inout_buffer_size_bytes == NULL) || ((buffer == NULL) && (0 != *inout_buffer_size_bytes)))
     {
         return -NUNAVUT_ERROR_INVALID_ARGUMENT;
+    }
+    if (buffer == NULL)
+    {
+        buffer = (const uint8_t*)"";
     }
 
     const size_t capacity_bytes = *inout_buffer_size_bytes;
