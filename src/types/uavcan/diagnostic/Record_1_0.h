@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/diagnostic/8184.Record.1.0.dsdl
-// Generated at:  2022-12-15 21:30:28.874208 UTC
+// Generated at:  2022-12-15 22:04:51.547614 UTC
 // Is deprecated: yes
 // Fixed port-ID: 8184
 // Full name:     uavcan.diagnostic.Record
@@ -28,7 +28,7 @@
 // Language Options
 //     target_endianness:  any
 //     omit_float_serialization_support:  False
-//     enable_serialization_asserts:  True
+//     enable_serialization_asserts:  False
 //     enable_override_variable_array_capacity:  False
 //     cast_format:  (({type}) {value})
 
@@ -56,7 +56,7 @@ static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_OMIT_FLOAT_SERIALIZATION_SUPPORT == 0,
               "/tmp/public_regulated_data_types/uavcan/diagnostic/8184.Record.1.0.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
-static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 1,
+static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 0,
               "/tmp/public_regulated_data_types/uavcan/diagnostic/8184.Record.1.0.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_OVERRIDE_VARIABLE_ARRAY_CAPACITY == 0,
@@ -142,12 +142,7 @@ static inline int8_t uavcan_diagnostic_Record_1_0_serialize_(
     size_t offset_bits = 0U;
 
     {   // uavcan.time.SynchronizedTimestamp.1.0 timestamp
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-        NUNAVUT_ASSERT((offset_bits + 56ULL) <= (capacity_bytes * 8U));
         size_t _size_bytes0_ = 7UL;  // Nested object (max) size, in bytes.
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-        NUNAVUT_ASSERT((offset_bits / 8U + _size_bytes0_) <= capacity_bytes);
         int8_t _err0_ = uavcan_time_SynchronizedTimestamp_1_0_serialize_(
             &obj->timestamp, &buffer[offset_bits / 8U], &_size_bytes0_);
         if (_err0_ < 0)
@@ -155,31 +150,22 @@ static inline int8_t uavcan_diagnostic_Record_1_0_serialize_(
             return _err0_;
         }
         // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
-        NUNAVUT_ASSERT((_size_bytes0_ * 8U) == 56ULL);
         offset_bits += _size_bytes0_ * 8U;  // Advance by the size of the nested object.
-        NUNAVUT_ASSERT(offset_bits <= (capacity_bytes * 8U));
     }
 
     if (offset_bits % 8U != 0U)  // Pad to 8 bits. TODO: Eliminate redundant padding checks.
     {
         const uint8_t _pad0_ = (uint8_t)(8U - offset_bits % 8U);
-        NUNAVUT_ASSERT(_pad0_ > 0);
         const int8_t _err1_ = nunavutSetUxx(&buffer[0], capacity_bytes, offset_bits, 0U, _pad0_);  // Optimize?
         if (_err1_ < 0)
         {
             return _err1_;
         }
         offset_bits += _pad0_;
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     }
 
     {   // uavcan.diagnostic.Severity.1.0 severity
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-        NUNAVUT_ASSERT((offset_bits + 8ULL) <= (capacity_bytes * 8U));
         size_t _size_bytes1_ = 1UL;  // Nested object (max) size, in bytes.
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-        NUNAVUT_ASSERT((offset_bits / 8U + _size_bytes1_) <= capacity_bytes);
         int8_t _err2_ = uavcan_diagnostic_Severity_1_0_serialize_(
             &obj->severity, &buffer[offset_bits / 8U], &_size_bytes1_);
         if (_err2_ < 0)
@@ -187,14 +173,10 @@ static inline int8_t uavcan_diagnostic_Record_1_0_serialize_(
             return _err2_;
         }
         // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
-        NUNAVUT_ASSERT((_size_bytes1_ * 8U) == 8ULL);
         offset_bits += _size_bytes1_ * 8U;  // Advance by the size of the nested object.
-        NUNAVUT_ASSERT(offset_bits <= (capacity_bytes * 8U));
     }
 
     {   // saturated uint8[<=112] text
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-        NUNAVUT_ASSERT((offset_bits + 904ULL) <= (capacity_bytes * 8U));
         if (obj->text.count > 112)
         {
             return -NUNAVUT_ERROR_REPRESENTATION_BAD_ARRAY_LENGTH;
@@ -202,11 +184,8 @@ static inline int8_t uavcan_diagnostic_Record_1_0_serialize_(
         // Array length prefix: truncated uint8
         buffer[offset_bits / 8U] = (uint8_t)(obj->text.count);  // C std, 6.3.1.3 Signed and unsigned integers
         offset_bits += 8U;
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
         for (size_t _index0_ = 0U; _index0_ < obj->text.count; ++_index0_)
         {
-            NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-            NUNAVUT_ASSERT((offset_bits + 8ULL) <= (capacity_bytes * 8U));
             // Saturation code not emitted -- native representation matches the serialized representation.
             buffer[offset_bits / 8U] = (uint8_t)(obj->text.elements[_index0_]);  // C std, 6.3.1.3 Signed and unsigned integers
             offset_bits += 8U;
@@ -216,21 +195,15 @@ static inline int8_t uavcan_diagnostic_Record_1_0_serialize_(
     if (offset_bits % 8U != 0U)  // Pad to 8 bits. TODO: Eliminate redundant padding checks.
     {
         const uint8_t _pad1_ = (uint8_t)(8U - offset_bits % 8U);
-        NUNAVUT_ASSERT(_pad1_ > 0);
         const int8_t _err3_ = nunavutSetUxx(&buffer[0], capacity_bytes, offset_bits, 0U, _pad1_);  // Optimize?
         if (_err3_ < 0)
         {
             return _err3_;
         }
         offset_bits += _pad1_;
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     }
     // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
 
-    NUNAVUT_ASSERT(offset_bits >= 72ULL);
-    NUNAVUT_ASSERT(offset_bits <= 968ULL);
-
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     *inout_buffer_size_bytes = (size_t) (offset_bits / 8U);
 
     return NUNAVUT_SUCCESS;
@@ -272,11 +245,8 @@ static inline int8_t uavcan_diagnostic_Record_1_0_deserialize_(
     size_t offset_bits = 0U;
 
     // uavcan.time.SynchronizedTimestamp.1.0 timestamp
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     {
         size_t _size_bytes2_ = (size_t)(capacity_bytes - nunavutChooseMin((offset_bits / 8U), capacity_bytes));
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
         const int8_t _err4_ = uavcan_time_SynchronizedTimestamp_1_0_deserialize_(
             &out_obj->timestamp, &buffer[offset_bits / 8U], &_size_bytes2_);
         if (_err4_ < 0)
@@ -289,11 +259,8 @@ static inline int8_t uavcan_diagnostic_Record_1_0_deserialize_(
     offset_bits = (offset_bits + 7U) & ~(size_t) 7U;  // Align on 8 bits.
 
     // uavcan.diagnostic.Severity.1.0 severity
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     {
         size_t _size_bytes3_ = (size_t)(capacity_bytes - nunavutChooseMin((offset_bits / 8U), capacity_bytes));
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
         const int8_t _err5_ = uavcan_diagnostic_Severity_1_0_deserialize_(
             &out_obj->severity, &buffer[offset_bits / 8U], &_size_bytes3_);
         if (_err5_ < 0)
@@ -304,7 +271,6 @@ static inline int8_t uavcan_diagnostic_Record_1_0_deserialize_(
     }
 
     // saturated uint8[<=112] text
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     // Array length prefix: truncated uint8
     if ((offset_bits + 8U) <= capacity_bits)
     {
@@ -319,10 +285,8 @@ static inline int8_t uavcan_diagnostic_Record_1_0_deserialize_(
     {
         return -NUNAVUT_ERROR_REPRESENTATION_BAD_ARRAY_LENGTH;
     }
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     for (size_t _index1_ = 0U; _index1_ < out_obj->text.count; ++_index1_)
     {
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
         if ((offset_bits + 8U) <= capacity_bits)
         {
             out_obj->text.elements[_index1_] = buffer[offset_bits / 8U] & 255U;
@@ -335,9 +299,8 @@ static inline int8_t uavcan_diagnostic_Record_1_0_deserialize_(
     }
 
     offset_bits = (offset_bits + 7U) & ~(size_t) 7U;  // Align on 8 bits.
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+
     *inout_buffer_size_bytes = (size_t) (nunavutChooseMin(offset_bits, capacity_bits) / 8U);
-    NUNAVUT_ASSERT(capacity_bytes >= *inout_buffer_size_bytes);
 
     return NUNAVUT_SUCCESS;
 }
@@ -353,7 +316,7 @@ static inline void uavcan_diagnostic_Record_1_0_initialize_(uavcan_diagnostic_Re
         size_t size_bytes = 0;
         const uint8_t buf = 0;
         const int8_t err = uavcan_diagnostic_Record_1_0_deserialize_(out_obj, &buf, &size_bytes);
-        NUNAVUT_ASSERT(err >= 0);
+
         (void) err;
     }
 }

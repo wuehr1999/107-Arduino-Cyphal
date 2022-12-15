@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/reg/udral/physics/optics/HighColor.0.1.dsdl
-// Generated at:  2022-12-15 21:30:30.358722 UTC
+// Generated at:  2022-12-15 22:04:53.526466 UTC
 // Is deprecated: no
 // Fixed port-ID: None
 // Full name:     reg.udral.physics.optics.HighColor
@@ -28,7 +28,7 @@
 // Language Options
 //     target_endianness:  any
 //     omit_float_serialization_support:  False
-//     enable_serialization_asserts:  True
+//     enable_serialization_asserts:  False
 //     enable_override_variable_array_capacity:  False
 //     cast_format:  (({type}) {value})
 
@@ -45,7 +45,7 @@ static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_OMIT_FLOAT_SERIALIZATION_SUPPORT == 0,
               "/tmp/public_regulated_data_types/reg/udral/physics/optics/HighColor.0.1.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
-static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 1,
+static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 0,
               "/tmp/public_regulated_data_types/reg/udral/physics/optics/HighColor.0.1.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_OVERRIDE_VARIABLE_ARRAY_CAPACITY == 0,
@@ -130,8 +130,6 @@ static inline int8_t reg_udral_physics_optics_HighColor_0_1_serialize_(
     size_t offset_bits = 0U;
 
     {   // saturated uint5 red
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-        NUNAVUT_ASSERT((offset_bits + 5ULL) <= (capacity_bytes * 8U));
         uint8_t _sat0_ = obj->red;
         if (_sat0_ > 31U)
         {
@@ -142,7 +140,6 @@ static inline int8_t reg_udral_physics_optics_HighColor_0_1_serialize_(
     }
 
     {   // saturated uint6 green
-        NUNAVUT_ASSERT((offset_bits + 6ULL) <= (capacity_bytes * 8U));
         uint8_t _sat1_ = obj->green;
         if (_sat1_ > 63U)
         {
@@ -157,7 +154,6 @@ static inline int8_t reg_udral_physics_optics_HighColor_0_1_serialize_(
     }
 
     {   // saturated uint5 blue
-        NUNAVUT_ASSERT((offset_bits + 5ULL) <= (capacity_bytes * 8U));
         uint8_t _sat2_ = obj->blue;
         if (_sat2_ > 31U)
         {
@@ -174,20 +170,15 @@ static inline int8_t reg_udral_physics_optics_HighColor_0_1_serialize_(
     if (offset_bits % 8U != 0U)  // Pad to 8 bits. TODO: Eliminate redundant padding checks.
     {
         const uint8_t _pad0_ = (uint8_t)(8U - offset_bits % 8U);
-        NUNAVUT_ASSERT(_pad0_ > 0);
         const int8_t _err2_ = nunavutSetUxx(&buffer[0], capacity_bytes, offset_bits, 0U, _pad0_);  // Optimize?
         if (_err2_ < 0)
         {
             return _err2_;
         }
         offset_bits += _pad0_;
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     }
     // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
 
-    NUNAVUT_ASSERT(offset_bits == 16ULL);
-
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     *inout_buffer_size_bytes = (size_t) (offset_bits / 8U);
 
     return NUNAVUT_SUCCESS;
@@ -229,7 +220,6 @@ static inline int8_t reg_udral_physics_optics_HighColor_0_1_deserialize_(
     size_t offset_bits = 0U;
 
     // saturated uint5 red
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     if ((offset_bits + 5U) <= capacity_bits)
     {
         out_obj->red = buffer[offset_bits / 8U] & 31U;
@@ -249,9 +239,8 @@ static inline int8_t reg_udral_physics_optics_HighColor_0_1_deserialize_(
     offset_bits += 5U;
 
     offset_bits = (offset_bits + 7U) & ~(size_t) 7U;  // Align on 8 bits.
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+
     *inout_buffer_size_bytes = (size_t) (nunavutChooseMin(offset_bits, capacity_bits) / 8U);
-    NUNAVUT_ASSERT(capacity_bytes >= *inout_buffer_size_bytes);
 
     return NUNAVUT_SUCCESS;
 }
@@ -267,7 +256,7 @@ static inline void reg_udral_physics_optics_HighColor_0_1_initialize_(reg_udral_
         size_t size_bytes = 0;
         const uint8_t buf = 0;
         const int8_t err = reg_udral_physics_optics_HighColor_0_1_deserialize_(out_obj, &buf, &size_bytes);
-        NUNAVUT_ASSERT(err >= 0);
+
         (void) err;
     }
 }

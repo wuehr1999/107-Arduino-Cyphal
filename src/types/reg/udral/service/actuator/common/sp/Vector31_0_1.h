@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/reg/udral/service/actuator/common/sp/Vector31.0.1.dsdl
-// Generated at:  2022-12-15 21:30:30.339212 UTC
+// Generated at:  2022-12-15 22:04:53.443185 UTC
 // Is deprecated: no
 // Fixed port-ID: None
 // Full name:     reg.udral.service.actuator.common.sp.Vector31
@@ -28,7 +28,7 @@
 // Language Options
 //     target_endianness:  any
 //     omit_float_serialization_support:  False
-//     enable_serialization_asserts:  True
+//     enable_serialization_asserts:  False
 //     enable_override_variable_array_capacity:  False
 //     cast_format:  (({type}) {value})
 
@@ -45,7 +45,7 @@ static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_OMIT_FLOAT_SERIALIZATION_SUPPORT == 0,
               "/tmp/public_regulated_data_types/reg/udral/service/actuator/common/sp/Vector31.0.1.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
-static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 1,
+static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 0,
               "/tmp/public_regulated_data_types/reg/udral/service/actuator/common/sp/Vector31.0.1.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_OVERRIDE_VARIABLE_ARRAY_CAPACITY == 0,
@@ -121,13 +121,9 @@ static inline int8_t reg_udral_service_actuator_common_sp_Vector31_0_1_serialize
     size_t offset_bits = 0U;
 
     {   // saturated float16[31] value
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-        NUNAVUT_ASSERT((offset_bits + 496ULL) <= (capacity_bytes * 8U));
         const size_t _origin0_ = offset_bits;
         for (size_t _index0_ = 0U; _index0_ < 31UL; ++_index0_)
         {
-            NUNAVUT_ASSERT(offset_bits % 8U == 0U);
-            NUNAVUT_ASSERT((offset_bits + 16ULL) <= (capacity_bytes * 8U));
             float _sat0_ = obj->value[_index0_];
             if (isfinite(_sat0_))
             {
@@ -148,27 +144,21 @@ static inline int8_t reg_udral_service_actuator_common_sp_Vector31_0_1_serialize
             offset_bits += 16U;
         }
         // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
-        NUNAVUT_ASSERT((offset_bits - _origin0_) == 496ULL);
         (void) _origin0_;
     }
 
     if (offset_bits % 8U != 0U)  // Pad to 8 bits. TODO: Eliminate redundant padding checks.
     {
         const uint8_t _pad0_ = (uint8_t)(8U - offset_bits % 8U);
-        NUNAVUT_ASSERT(_pad0_ > 0);
         const int8_t _err1_ = nunavutSetUxx(&buffer[0], capacity_bytes, offset_bits, 0U, _pad0_);  // Optimize?
         if (_err1_ < 0)
         {
             return _err1_;
         }
         offset_bits += _pad0_;
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     }
     // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
 
-    NUNAVUT_ASSERT(offset_bits == 496ULL);
-
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     *inout_buffer_size_bytes = (size_t) (offset_bits / 8U);
 
     return NUNAVUT_SUCCESS;
@@ -210,18 +200,15 @@ static inline int8_t reg_udral_service_actuator_common_sp_Vector31_0_1_deseriali
     size_t offset_bits = 0U;
 
     // saturated float16[31] value
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     for (size_t _index1_ = 0U; _index1_ < 31UL; ++_index1_)
     {
-        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
         out_obj->value[_index1_] = nunavutGetF16(&buffer[0], capacity_bytes, offset_bits);
         offset_bits += 16U;
     }
 
     offset_bits = (offset_bits + 7U) & ~(size_t) 7U;  // Align on 8 bits.
-    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+
     *inout_buffer_size_bytes = (size_t) (nunavutChooseMin(offset_bits, capacity_bits) / 8U);
-    NUNAVUT_ASSERT(capacity_bytes >= *inout_buffer_size_bytes);
 
     return NUNAVUT_SUCCESS;
 }
@@ -237,7 +224,7 @@ static inline void reg_udral_service_actuator_common_sp_Vector31_0_1_initialize_
         size_t size_bytes = 0;
         const uint8_t buf = 0;
         const int8_t err = reg_udral_service_actuator_common_sp_Vector31_0_1_deserialize_(out_obj, &buf, &size_bytes);
-        NUNAVUT_ASSERT(err >= 0);
+
         (void) err;
     }
 }
