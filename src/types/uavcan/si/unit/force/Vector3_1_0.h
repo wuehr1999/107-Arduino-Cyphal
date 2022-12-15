@@ -1,4 +1,4 @@
-// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://opencyphal.org.
+// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://uavcan.org.
 // You shouldn't attempt to edit this file.
 //
 // Checking this file under version control is not recommended unless it is used as part of a high-SIL
@@ -7,30 +7,19 @@
 // To avoid conflicts with definitions given in the source DSDL file, all entities created by the code generator
 // are named with an underscore at the end, like foo_bar_().
 //
-// Generator:     nunavut-1.9.0 (serialization was enabled)
+// Generator:     nunavut-1.1.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/si/unit/force/Vector3.1.0.dsdl
-// Generated at:  2022-12-15 22:04:51.664429 UTC
+// Generated at:  2022-12-15 22:24:24.535734 UTC
 // Is deprecated: no
 // Fixed port-ID: None
 // Full name:     uavcan.si.unit.force.Vector3
 // Version:       1.0
 //
-// Platform
-//     python_implementation:  CPython
-//     python_version:  3.10.6
-//     python_release_level:  final
-//     python_build:  ('main', 'Nov 14 2022 16:10:14')
-//     python_compiler:  GCC 11.3.0
-//     python_revision:
-//     python_xoptions:  {}
-//     runtime_platform:  Linux-5.15.0-56-generic-x86_64-with-glibc2.35
-//
 // Language Options
 //     target_endianness:  any
 //     omit_float_serialization_support:  False
-//     enable_serialization_asserts:  False
+//     enable_serialization_asserts:  True
 //     enable_override_variable_array_capacity:  False
-//     cast_format:  (({type}) {value})
 
 #ifndef UAVCAN_SI_UNIT_FORCE_VECTOR3_1_0_INCLUDED_
 #define UAVCAN_SI_UNIT_FORCE_VECTOR3_1_0_INCLUDED_
@@ -45,13 +34,10 @@ static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_OMIT_FLOAT_SERIALIZATION_SUPPORT == 0,
               "/tmp/public_regulated_data_types/uavcan/si/unit/force/Vector3.1.0.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
-static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 0,
+static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 1,
               "/tmp/public_regulated_data_types/uavcan/si/unit/force/Vector3.1.0.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_OVERRIDE_VARIABLE_ARRAY_CAPACITY == 0,
-              "/tmp/public_regulated_data_types/uavcan/si/unit/force/Vector3.1.0.dsdl is trying to use a serialization library that was compiled with "
-              "different language options. This is dangerous and therefore not allowed." );
-static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_CAST_FORMAT == 2368206204,
               "/tmp/public_regulated_data_types/uavcan/si/unit/force/Vector3.1.0.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 
@@ -59,7 +45,7 @@ static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_CAST_FORMAT == 2368206204,
 extern "C" {
 #endif
 
-/// This type does not have a fixed port-ID. See https://forum.opencyphal.org/t/choosing-message-and-service-ids/889
+/// This type does not have a fixed port-ID. See https://forum.uavcan.org/t/choosing-message-and-service-ids/889
 #define uavcan_si_unit_force_Vector3_1_0_HAS_FIXED_PORT_ID_ false
 
 #define uavcan_si_unit_force_Vector3_1_0_FULL_NAME_             "uavcan.si.unit.force.Vector3"
@@ -121,9 +107,13 @@ static inline int8_t uavcan_si_unit_force_Vector3_1_0_serialize_(
     size_t offset_bits = 0U;
 
     {   // saturated float32[3] newton
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT((offset_bits + 96ULL) <= (capacity_bytes * 8U));
         const size_t _origin0_ = offset_bits;
         for (size_t _index0_ = 0U; _index0_ < 3UL; ++_index0_)
         {
+            NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+            NUNAVUT_ASSERT((offset_bits + 32ULL) <= (capacity_bytes * 8U));
             // Saturation code not emitted -- assume the native representation of float32 is conformant.
             static_assert(NUNAVUT_PLATFORM_IEEE754_FLOAT, "Native IEEE754 binary32 required. TODO: relax constraint");
             const int8_t _err0_ = nunavutSetF32(&buffer[0], capacity_bytes, offset_bits, obj->newton[_index0_]);
@@ -134,21 +124,27 @@ static inline int8_t uavcan_si_unit_force_Vector3_1_0_serialize_(
             offset_bits += 32U;
         }
         // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
+        NUNAVUT_ASSERT((offset_bits - _origin0_) == 96ULL);
         (void) _origin0_;
     }
 
     if (offset_bits % 8U != 0U)  // Pad to 8 bits. TODO: Eliminate redundant padding checks.
     {
         const uint8_t _pad0_ = (uint8_t)(8U - offset_bits % 8U);
+        NUNAVUT_ASSERT(_pad0_ > 0);
         const int8_t _err1_ = nunavutSetUxx(&buffer[0], capacity_bytes, offset_bits, 0U, _pad0_);  // Optimize?
         if (_err1_ < 0)
         {
             return _err1_;
         }
         offset_bits += _pad0_;
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     }
     // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
 
+    NUNAVUT_ASSERT(offset_bits == 96ULL);
+
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     *inout_buffer_size_bytes = (size_t) (offset_bits / 8U);
 
     return NUNAVUT_SUCCESS;
@@ -174,15 +170,11 @@ static inline int8_t uavcan_si_unit_force_Vector3_1_0_serialize_(
 ///
 /// @returns Negative on error, zero on success.
 static inline int8_t uavcan_si_unit_force_Vector3_1_0_deserialize_(
-    uavcan_si_unit_force_Vector3_1_0* const out_obj, const uint8_t* buffer, size_t* const inout_buffer_size_bytes)
+    uavcan_si_unit_force_Vector3_1_0* const out_obj, const uint8_t* const buffer, size_t* const inout_buffer_size_bytes)
 {
-    if ((out_obj == NULL) || (inout_buffer_size_bytes == NULL) || ((buffer == NULL) && (0 != *inout_buffer_size_bytes)))
+    if ((out_obj == NULL) || (buffer == NULL) || (inout_buffer_size_bytes == NULL))
     {
         return -NUNAVUT_ERROR_INVALID_ARGUMENT;
-    }
-    if (buffer == NULL)
-    {
-        buffer = (const uint8_t*)"";
     }
 
     const size_t capacity_bytes = *inout_buffer_size_bytes;
@@ -190,15 +182,18 @@ static inline int8_t uavcan_si_unit_force_Vector3_1_0_deserialize_(
     size_t offset_bits = 0U;
 
     // saturated float32[3] newton
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     for (size_t _index1_ = 0U; _index1_ < 3UL; ++_index1_)
     {
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
         out_obj->newton[_index1_] = nunavutGetF32(&buffer[0], capacity_bytes, offset_bits);
         offset_bits += 32U;
     }
 
     offset_bits = (offset_bits + 7U) & ~(size_t) 7U;  // Align on 8 bits.
-
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     *inout_buffer_size_bytes = (size_t) (nunavutChooseMin(offset_bits, capacity_bits) / 8U);
+    NUNAVUT_ASSERT(capacity_bytes >= *inout_buffer_size_bytes);
 
     return NUNAVUT_SUCCESS;
 }
@@ -214,7 +209,7 @@ static inline void uavcan_si_unit_force_Vector3_1_0_initialize_(uavcan_si_unit_f
         size_t size_bytes = 0;
         const uint8_t buf = 0;
         const int8_t err = uavcan_si_unit_force_Vector3_1_0_deserialize_(out_obj, &buf, &size_bytes);
-
+        NUNAVUT_ASSERT(err >= 0);
         (void) err;
     }
 }

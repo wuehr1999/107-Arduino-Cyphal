@@ -1,4 +1,4 @@
-// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://opencyphal.org.
+// This is an AUTO-GENERATED UAVCAN DSDL data type implementation. Curious? See https://uavcan.org.
 // You shouldn't attempt to edit this file.
 //
 // Checking this file under version control is not recommended unless it is used as part of a high-SIL
@@ -7,40 +7,29 @@
 // To avoid conflicts with definitions given in the source DSDL file, all entities created by the code generator
 // are named with an underscore at the end, like foo_bar_().
 //
-// Generator:     nunavut-1.9.0 (serialization was enabled)
+// Generator:     nunavut-1.1.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/register/384.Access.1.0.dsdl
-// Generated at:  2022-12-15 22:04:52.069653 UTC
+// Generated at:  2022-12-15 22:23:56.753377 UTC
 // Is deprecated: no
 // Fixed port-ID: 384
 // Full name:     uavcan.register.Access
 // Version:       1.0
 //
-// Platform
-//     python_implementation:  CPython
-//     python_version:  3.10.6
-//     python_release_level:  final
-//     python_build:  ('main', 'Nov 14 2022 16:10:14')
-//     python_compiler:  GCC 11.3.0
-//     python_revision:
-//     python_xoptions:  {}
-//     runtime_platform:  Linux-5.15.0-56-generic-x86_64-with-glibc2.35
-//
 // Language Options
 //     target_endianness:  any
 //     omit_float_serialization_support:  False
-//     enable_serialization_asserts:  False
+//     enable_serialization_asserts:  True
 //     enable_override_variable_array_capacity:  False
-//     cast_format:  (({type}) {value})
 
 #ifndef UAVCAN_REGISTER_ACCESS_1_0_INCLUDED_
 #define UAVCAN_REGISTER_ACCESS_1_0_INCLUDED_
 
 #include <nunavut/support/serialization.h>
-#include <stdbool.h>
-#include <stdlib.h>
 #include <types/uavcan/_register/Name_1_0.h>
 #include <types/uavcan/_register/Value_1_0.h>
 #include <types/uavcan/time/SynchronizedTimestamp_1_0.h>
+#include <stdbool.h>
+#include <stdlib.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
               "/tmp/public_regulated_data_types/uavcan/register/384.Access.1.0.dsdl is trying to use a serialization library that was compiled with "
@@ -48,13 +37,10 @@ static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_OMIT_FLOAT_SERIALIZATION_SUPPORT == 0,
               "/tmp/public_regulated_data_types/uavcan/register/384.Access.1.0.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
-static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 0,
+static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 1,
               "/tmp/public_regulated_data_types/uavcan/register/384.Access.1.0.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_OVERRIDE_VARIABLE_ARRAY_CAPACITY == 0,
-              "/tmp/public_regulated_data_types/uavcan/register/384.Access.1.0.dsdl is trying to use a serialization library that was compiled with "
-              "different language options. This is dangerous and therefore not allowed." );
-static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_CAST_FORMAT == 2368206204,
               "/tmp/public_regulated_data_types/uavcan/register/384.Access.1.0.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 
@@ -126,7 +112,12 @@ static inline int8_t uavcan_register_Access_Request_1_0_serialize_(
     size_t offset_bits = 0U;
 
     {   // uavcan.register.Name.1.0 name
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT((offset_bits + 2048ULL) <= (capacity_bytes * 8U));
         size_t _size_bytes0_ = 256UL;  // Nested object (max) size, in bytes.
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT((offset_bits / 8U + _size_bytes0_) <= capacity_bytes);
         int8_t _err0_ = uavcan_register_Name_1_0_serialize_(
             &obj->name, &buffer[offset_bits / 8U], &_size_bytes0_);
         if (_err0_ < 0)
@@ -134,22 +125,32 @@ static inline int8_t uavcan_register_Access_Request_1_0_serialize_(
             return _err0_;
         }
         // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
+        NUNAVUT_ASSERT((_size_bytes0_ * 8U) >= 8ULL);
+        NUNAVUT_ASSERT((_size_bytes0_ * 8U) <= 2048ULL);
         offset_bits += _size_bytes0_ * 8U;  // Advance by the size of the nested object.
+        NUNAVUT_ASSERT(offset_bits <= (capacity_bytes * 8U));
     }
 
     if (offset_bits % 8U != 0U)  // Pad to 8 bits. TODO: Eliminate redundant padding checks.
     {
         const uint8_t _pad0_ = (uint8_t)(8U - offset_bits % 8U);
+        NUNAVUT_ASSERT(_pad0_ > 0);
         const int8_t _err1_ = nunavutSetUxx(&buffer[0], capacity_bytes, offset_bits, 0U, _pad0_);  // Optimize?
         if (_err1_ < 0)
         {
             return _err1_;
         }
         offset_bits += _pad0_;
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     }
 
     {   // uavcan.register.Value.1.0 value
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT((offset_bits + 2072ULL) <= (capacity_bytes * 8U));
         size_t _size_bytes1_ = 259UL;  // Nested object (max) size, in bytes.
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT((offset_bits / 8U + _size_bytes1_) <= capacity_bytes);
         int8_t _err2_ = uavcan_register_Value_1_0_serialize_(
             &obj->value, &buffer[offset_bits / 8U], &_size_bytes1_);
         if (_err2_ < 0)
@@ -157,21 +158,30 @@ static inline int8_t uavcan_register_Access_Request_1_0_serialize_(
             return _err2_;
         }
         // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
+        NUNAVUT_ASSERT((_size_bytes1_ * 8U) >= 8ULL);
+        NUNAVUT_ASSERT((_size_bytes1_ * 8U) <= 2072ULL);
         offset_bits += _size_bytes1_ * 8U;  // Advance by the size of the nested object.
+        NUNAVUT_ASSERT(offset_bits <= (capacity_bytes * 8U));
     }
 
     if (offset_bits % 8U != 0U)  // Pad to 8 bits. TODO: Eliminate redundant padding checks.
     {
         const uint8_t _pad1_ = (uint8_t)(8U - offset_bits % 8U);
+        NUNAVUT_ASSERT(_pad1_ > 0);
         const int8_t _err3_ = nunavutSetUxx(&buffer[0], capacity_bytes, offset_bits, 0U, _pad1_);  // Optimize?
         if (_err3_ < 0)
         {
             return _err3_;
         }
         offset_bits += _pad1_;
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     }
     // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
 
+    NUNAVUT_ASSERT(offset_bits >= 16ULL);
+    NUNAVUT_ASSERT(offset_bits <= 4120ULL);
+
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     *inout_buffer_size_bytes = (size_t) (offset_bits / 8U);
 
     return NUNAVUT_SUCCESS;
@@ -197,15 +207,11 @@ static inline int8_t uavcan_register_Access_Request_1_0_serialize_(
 ///
 /// @returns Negative on error, zero on success.
 static inline int8_t uavcan_register_Access_Request_1_0_deserialize_(
-    uavcan_register_Access_Request_1_0* const out_obj, const uint8_t* buffer, size_t* const inout_buffer_size_bytes)
+    uavcan_register_Access_Request_1_0* const out_obj, const uint8_t* const buffer, size_t* const inout_buffer_size_bytes)
 {
-    if ((out_obj == NULL) || (inout_buffer_size_bytes == NULL) || ((buffer == NULL) && (0 != *inout_buffer_size_bytes)))
+    if ((out_obj == NULL) || (buffer == NULL) || (inout_buffer_size_bytes == NULL))
     {
         return -NUNAVUT_ERROR_INVALID_ARGUMENT;
-    }
-    if (buffer == NULL)
-    {
-        buffer = (const uint8_t*)"";
     }
 
     const size_t capacity_bytes = *inout_buffer_size_bytes;
@@ -213,8 +219,11 @@ static inline int8_t uavcan_register_Access_Request_1_0_deserialize_(
     size_t offset_bits = 0U;
 
     // uavcan.register.Name.1.0 name
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     {
         size_t _size_bytes2_ = (size_t)(capacity_bytes - nunavutChooseMin((offset_bits / 8U), capacity_bytes));
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
         const int8_t _err4_ = uavcan_register_Name_1_0_deserialize_(
             &out_obj->name, &buffer[offset_bits / 8U], &_size_bytes2_);
         if (_err4_ < 0)
@@ -227,8 +236,11 @@ static inline int8_t uavcan_register_Access_Request_1_0_deserialize_(
     offset_bits = (offset_bits + 7U) & ~(size_t) 7U;  // Align on 8 bits.
 
     // uavcan.register.Value.1.0 value
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     {
         size_t _size_bytes3_ = (size_t)(capacity_bytes - nunavutChooseMin((offset_bits / 8U), capacity_bytes));
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
         const int8_t _err5_ = uavcan_register_Value_1_0_deserialize_(
             &out_obj->value, &buffer[offset_bits / 8U], &_size_bytes3_);
         if (_err5_ < 0)
@@ -239,8 +251,9 @@ static inline int8_t uavcan_register_Access_Request_1_0_deserialize_(
     }
 
     offset_bits = (offset_bits + 7U) & ~(size_t) 7U;  // Align on 8 bits.
-
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     *inout_buffer_size_bytes = (size_t) (nunavutChooseMin(offset_bits, capacity_bits) / 8U);
+    NUNAVUT_ASSERT(capacity_bytes >= *inout_buffer_size_bytes);
 
     return NUNAVUT_SUCCESS;
 }
@@ -256,7 +269,7 @@ static inline void uavcan_register_Access_Request_1_0_initialize_(uavcan_registe
         size_t size_bytes = 0;
         const uint8_t buf = 0;
         const int8_t err = uavcan_register_Access_Request_1_0_deserialize_(out_obj, &buf, &size_bytes);
-
+        NUNAVUT_ASSERT(err >= 0);
         (void) err;
     }
 }
@@ -325,7 +338,12 @@ static inline int8_t uavcan_register_Access_Response_1_0_serialize_(
     size_t offset_bits = 0U;
 
     {   // uavcan.time.SynchronizedTimestamp.1.0 timestamp
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT((offset_bits + 56ULL) <= (capacity_bytes * 8U));
         size_t _size_bytes4_ = 7UL;  // Nested object (max) size, in bytes.
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT((offset_bits / 8U + _size_bytes4_) <= capacity_bytes);
         int8_t _err6_ = uavcan_time_SynchronizedTimestamp_1_0_serialize_(
             &obj->timestamp, &buffer[offset_bits / 8U], &_size_bytes4_);
         if (_err6_ < 0)
@@ -333,15 +351,20 @@ static inline int8_t uavcan_register_Access_Response_1_0_serialize_(
             return _err6_;
         }
         // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
+        NUNAVUT_ASSERT((_size_bytes4_ * 8U) == 56ULL);
         offset_bits += _size_bytes4_ * 8U;  // Advance by the size of the nested object.
+        NUNAVUT_ASSERT(offset_bits <= (capacity_bytes * 8U));
     }
 
     {   // saturated bool mutable
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT((offset_bits + 1ULL) <= (capacity_bytes * 8U));
         buffer[offset_bits / 8U] = obj->_mutable ? 1U : 0U;
         offset_bits += 1U;
     }
 
     {   // saturated bool persistent
+        NUNAVUT_ASSERT((offset_bits + 1ULL) <= (capacity_bytes * 8U));
         if (obj->persistent)
         {
             buffer[offset_bits / 8U] = (uint8_t)(buffer[offset_bits / 8U] | (1U << (offset_bits % 8U)));
@@ -354,6 +377,7 @@ static inline int8_t uavcan_register_Access_Response_1_0_serialize_(
     }
 
     {   // void6
+        NUNAVUT_ASSERT((offset_bits + 6ULL) <= (capacity_bytes * 8U));
         const int8_t _err7_ = nunavutSetUxx(&buffer[0], capacity_bytes, offset_bits, 0U, 6U);  // Optimize?
         if (_err7_ < 0)
         {
@@ -365,16 +389,23 @@ static inline int8_t uavcan_register_Access_Response_1_0_serialize_(
     if (offset_bits % 8U != 0U)  // Pad to 8 bits. TODO: Eliminate redundant padding checks.
     {
         const uint8_t _pad2_ = (uint8_t)(8U - offset_bits % 8U);
+        NUNAVUT_ASSERT(_pad2_ > 0);
         const int8_t _err8_ = nunavutSetUxx(&buffer[0], capacity_bytes, offset_bits, 0U, _pad2_);  // Optimize?
         if (_err8_ < 0)
         {
             return _err8_;
         }
         offset_bits += _pad2_;
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     }
 
     {   // uavcan.register.Value.1.0 value
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT((offset_bits + 2072ULL) <= (capacity_bytes * 8U));
         size_t _size_bytes5_ = 259UL;  // Nested object (max) size, in bytes.
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+        NUNAVUT_ASSERT((offset_bits / 8U + _size_bytes5_) <= capacity_bytes);
         int8_t _err9_ = uavcan_register_Value_1_0_serialize_(
             &obj->value, &buffer[offset_bits / 8U], &_size_bytes5_);
         if (_err9_ < 0)
@@ -382,21 +413,30 @@ static inline int8_t uavcan_register_Access_Response_1_0_serialize_(
             return _err9_;
         }
         // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
+        NUNAVUT_ASSERT((_size_bytes5_ * 8U) >= 8ULL);
+        NUNAVUT_ASSERT((_size_bytes5_ * 8U) <= 2072ULL);
         offset_bits += _size_bytes5_ * 8U;  // Advance by the size of the nested object.
+        NUNAVUT_ASSERT(offset_bits <= (capacity_bytes * 8U));
     }
 
     if (offset_bits % 8U != 0U)  // Pad to 8 bits. TODO: Eliminate redundant padding checks.
     {
         const uint8_t _pad3_ = (uint8_t)(8U - offset_bits % 8U);
+        NUNAVUT_ASSERT(_pad3_ > 0);
         const int8_t _err10_ = nunavutSetUxx(&buffer[0], capacity_bytes, offset_bits, 0U, _pad3_);  // Optimize?
         if (_err10_ < 0)
         {
             return _err10_;
         }
         offset_bits += _pad3_;
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     }
     // It is assumed that we know the exact type of the serialized entity, hence we expect the size to match.
 
+    NUNAVUT_ASSERT(offset_bits >= 72ULL);
+    NUNAVUT_ASSERT(offset_bits <= 2136ULL);
+
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     *inout_buffer_size_bytes = (size_t) (offset_bits / 8U);
 
     return NUNAVUT_SUCCESS;
@@ -422,15 +462,11 @@ static inline int8_t uavcan_register_Access_Response_1_0_serialize_(
 ///
 /// @returns Negative on error, zero on success.
 static inline int8_t uavcan_register_Access_Response_1_0_deserialize_(
-    uavcan_register_Access_Response_1_0* const out_obj, const uint8_t* buffer, size_t* const inout_buffer_size_bytes)
+    uavcan_register_Access_Response_1_0* const out_obj, const uint8_t* const buffer, size_t* const inout_buffer_size_bytes)
 {
-    if ((out_obj == NULL) || (inout_buffer_size_bytes == NULL) || ((buffer == NULL) && (0 != *inout_buffer_size_bytes)))
+    if ((out_obj == NULL) || (buffer == NULL) || (inout_buffer_size_bytes == NULL))
     {
         return -NUNAVUT_ERROR_INVALID_ARGUMENT;
-    }
-    if (buffer == NULL)
-    {
-        buffer = (const uint8_t*)"";
     }
 
     const size_t capacity_bytes = *inout_buffer_size_bytes;
@@ -438,8 +474,11 @@ static inline int8_t uavcan_register_Access_Response_1_0_deserialize_(
     size_t offset_bits = 0U;
 
     // uavcan.time.SynchronizedTimestamp.1.0 timestamp
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     {
         size_t _size_bytes6_ = (size_t)(capacity_bytes - nunavutChooseMin((offset_bits / 8U), capacity_bytes));
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
         const int8_t _err11_ = uavcan_time_SynchronizedTimestamp_1_0_deserialize_(
             &out_obj->timestamp, &buffer[offset_bits / 8U], &_size_bytes6_);
         if (_err11_ < 0)
@@ -450,6 +489,7 @@ static inline int8_t uavcan_register_Access_Response_1_0_deserialize_(
     }
 
     // saturated bool mutable
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     if (offset_bits < capacity_bits)
     {
         out_obj->_mutable = (buffer[offset_bits / 8U] & 1U) != 0U;
@@ -477,8 +517,11 @@ static inline int8_t uavcan_register_Access_Response_1_0_deserialize_(
     offset_bits = (offset_bits + 7U) & ~(size_t) 7U;  // Align on 8 bits.
 
     // uavcan.register.Value.1.0 value
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     {
         size_t _size_bytes7_ = (size_t)(capacity_bytes - nunavutChooseMin((offset_bits / 8U), capacity_bytes));
+        NUNAVUT_ASSERT(offset_bits % 8U == 0U);
         const int8_t _err12_ = uavcan_register_Value_1_0_deserialize_(
             &out_obj->value, &buffer[offset_bits / 8U], &_size_bytes7_);
         if (_err12_ < 0)
@@ -489,8 +532,9 @@ static inline int8_t uavcan_register_Access_Response_1_0_deserialize_(
     }
 
     offset_bits = (offset_bits + 7U) & ~(size_t) 7U;  // Align on 8 bits.
-
+    NUNAVUT_ASSERT(offset_bits % 8U == 0U);
     *inout_buffer_size_bytes = (size_t) (nunavutChooseMin(offset_bits, capacity_bits) / 8U);
+    NUNAVUT_ASSERT(capacity_bytes >= *inout_buffer_size_bytes);
 
     return NUNAVUT_SUCCESS;
 }
@@ -506,7 +550,7 @@ static inline void uavcan_register_Access_Response_1_0_initialize_(uavcan_regist
         size_t size_bytes = 0;
         const uint8_t buf = 0;
         const int8_t err = uavcan_register_Access_Response_1_0_deserialize_(out_obj, &buf, &size_bytes);
-
+        NUNAVUT_ASSERT(err >= 0);
         (void) err;
     }
 }

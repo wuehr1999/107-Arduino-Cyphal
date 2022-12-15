@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/reg/udral/service/actuator/esc/_.0.1.dsdl
-// Generated at:  2022-12-15 22:04:53.462453 UTC
+// Generated at:  2022-12-15 22:20:36.069440 UTC
 // Is deprecated: no
 // Fixed port-ID: None
 // Full name:     reg.udral.service.actuator.esc._
@@ -28,7 +28,7 @@
 // Language Options
 //     target_endianness:  any
 //     omit_float_serialization_support:  False
-//     enable_serialization_asserts:  False
+//     enable_serialization_asserts:  True
 //     enable_override_variable_array_capacity:  False
 //     cast_format:  (({type}) {value})
 
@@ -44,7 +44,7 @@ static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_OMIT_FLOAT_SERIALIZATION_SUPPORT == 0,
               "/tmp/public_regulated_data_types/reg/udral/service/actuator/esc/_.0.1.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
-static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 0,
+static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_SERIALIZATION_ASSERTS == 1,
               "/tmp/public_regulated_data_types/reg/udral/service/actuator/esc/_.0.1.dsdl is trying to use a serialization library that was compiled with "
               "different language options. This is dangerous and therefore not allowed." );
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_ENABLE_OVERRIDE_VARIABLE_ARRAY_CAPACITY == 0,
@@ -157,7 +157,7 @@ static inline void reg_udral_service_actuator_esc___0_1_initialize_(reg_udral_se
         size_t size_bytes = 0;
         const uint8_t buf = 0;
         const int8_t err = reg_udral_service_actuator_esc___0_1_deserialize_(out_obj, &buf, &size_bytes);
-
+        NUNAVUT_ASSERT(err >= 0);
         (void) err;
     }
 }
