@@ -36,9 +36,9 @@
 #define REG_UDRAL_PHYSICS_ELECTRICITY_SOURCE_0_1_INCLUDED_
 
 #include <nunavut/support/serialization.h>
-#include <reg/udral/physics/electricity/Power_0_1.h>
+#include <types/reg/udral/physics/electricity/Power_0_1.h>
 #include <stdlib.h>
-#include <uavcan/si/unit/energy/Scalar_1_0.h>
+#include <types/uavcan/si/unit/energy/Scalar_1_0.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
               "/tmp/public_regulated_data_types/reg/udral/physics/electricity/Source.0.1.dsdl is trying to use a serialization library that was compiled with "

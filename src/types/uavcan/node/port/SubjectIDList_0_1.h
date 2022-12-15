@@ -40,8 +40,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-#include <uavcan/node/port/SubjectID_1_0.h>
-#include <uavcan/primitive/Empty_1_0.h>
+#include <types/uavcan/node/port/SubjectID_1_0.h>
+#include <types/uavcan/primitive/Empty_1_0.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
               "/tmp/public_regulated_data_types/uavcan/node/port/SubjectIDList.0.1.dsdl is trying to use a serialization library that was compiled with "

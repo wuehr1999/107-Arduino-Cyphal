@@ -36,8 +36,8 @@
 #define REG_UDRAL_PHYSICS_KINEMATICS_CARTESIAN_STATE_0_1_INCLUDED_
 
 #include <nunavut/support/serialization.h>
-#include <reg/udral/physics/kinematics/cartesian/Pose_0_1.h>
-#include <reg/udral/physics/kinematics/cartesian/Twist_0_1.h>
+#include <types/reg/udral/physics/kinematics/cartesian/Pose_0_1.h>
+#include <types/reg/udral/physics/kinematics/cartesian/Twist_0_1.h>
 #include <stdlib.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,

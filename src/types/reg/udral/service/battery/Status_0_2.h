@@ -36,12 +36,12 @@
 #define REG_UDRAL_SERVICE_BATTERY_STATUS_0_2_INCLUDED_
 
 #include <nunavut/support/serialization.h>
-#include <reg/udral/service/battery/Error_0_1.h>
-#include <reg/udral/service/common/Heartbeat_0_1.h>
+#include <types/reg/udral/service/battery/Error_0_1.h>
+#include <types/reg/udral/service/common/Heartbeat_0_1.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include <uavcan/si/unit/electric_charge/Scalar_1_0.h>
-#include <uavcan/si/unit/temperature/Scalar_1_0.h>
+#include <types/uavcan/si/unit/electric_charge/Scalar_1_0.h>
+#include <types/uavcan/si/unit/temperature/Scalar_1_0.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
               "/tmp/public_regulated_data_types/reg/udral/service/battery/Status.0.2.dsdl is trying to use a serialization library that was compiled with "

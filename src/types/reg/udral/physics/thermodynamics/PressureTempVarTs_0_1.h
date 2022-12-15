@@ -38,9 +38,9 @@
 #include <nunavut/support/serialization.h>
 #include <stdlib.h>
 #include <string.h>
-#include <uavcan/si/unit/pressure/Scalar_1_0.h>
-#include <uavcan/si/unit/temperature/Scalar_1_0.h>
-#include <uavcan/time/SynchronizedTimestamp_1_0.h>
+#include <types/uavcan/si/unit/pressure/Scalar_1_0.h>
+#include <types/uavcan/si/unit/temperature/Scalar_1_0.h>
+#include <types/uavcan/time/SynchronizedTimestamp_1_0.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
               "/tmp/public_regulated_data_types/reg/udral/physics/thermodynamics/PressureTempVarTs.0.1.dsdl is trying to use a serialization library that was compiled with "

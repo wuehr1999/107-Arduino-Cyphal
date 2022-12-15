@@ -36,7 +36,7 @@
 #define REG_UDRAL_PHYSICS_KINEMATICS_CARTESIAN_POINT_VAR_0_1_INCLUDED_
 
 #include <nunavut/support/serialization.h>
-#include <reg/udral/physics/kinematics/cartesian/Point_0_1.h>
+#include <types/reg/udral/physics/kinematics/cartesian/Point_0_1.h>
 #include <stdlib.h>
 #include <string.h>
 

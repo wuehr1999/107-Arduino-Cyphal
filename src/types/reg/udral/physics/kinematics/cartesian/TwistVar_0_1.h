@@ -36,7 +36,7 @@
 #define REG_UDRAL_PHYSICS_KINEMATICS_CARTESIAN_TWIST_VAR_0_1_INCLUDED_
 
 #include <nunavut/support/serialization.h>
-#include <reg/udral/physics/kinematics/cartesian/Twist_0_1.h>
+#include <types/reg/udral/physics/kinematics/cartesian/Twist_0_1.h>
 #include <stdlib.h>
 #include <string.h>
 

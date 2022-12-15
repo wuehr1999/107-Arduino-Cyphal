@@ -36,8 +36,8 @@
 #define REG_UDRAL_PHYSICS_KINEMATICS_GEODETIC_STATE_VAR_0_1_INCLUDED_
 
 #include <nunavut/support/serialization.h>
-#include <reg/udral/physics/kinematics/cartesian/TwistVar_0_1.h>
-#include <reg/udral/physics/kinematics/geodetic/PoseVar_0_1.h>
+#include <types/reg/udral/physics/kinematics/cartesian/TwistVar_0_1.h>
+#include <types/reg/udral/physics/kinematics/geodetic/PoseVar_0_1.h>
 #include <stdlib.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,

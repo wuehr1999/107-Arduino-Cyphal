@@ -36,7 +36,7 @@
 #define REG_UDRAL_SERVICE_ACTUATOR_COMMON_FEEDBACK_0_1_INCLUDED_
 
 #include <nunavut/support/serialization.h>
-#include <reg/udral/service/common/Heartbeat_0_1.h>
+#include <types/reg/udral/service/common/Heartbeat_0_1.h>
 #include <stdint.h>
 #include <stdlib.h>
 

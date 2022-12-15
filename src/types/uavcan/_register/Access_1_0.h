@@ -38,9 +38,9 @@
 #include <nunavut/support/serialization.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include <uavcan/_register/Name_1_0.h>
-#include <uavcan/_register/Value_1_0.h>
-#include <uavcan/time/SynchronizedTimestamp_1_0.h>
+#include <types/uavcan/_register/Name_1_0.h>
+#include <types/uavcan/_register/Value_1_0.h>
+#include <types/uavcan/time/SynchronizedTimestamp_1_0.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
               "/tmp/public_regulated_data_types/uavcan/register/384.Access.1.0.dsdl is trying to use a serialization library that was compiled with "

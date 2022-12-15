@@ -36,8 +36,8 @@
 #define REG_UDRAL_PHYSICS_KINEMATICS_GEODETIC_POINT_STATE_VAR_0_1_INCLUDED_
 
 #include <nunavut/support/serialization.h>
-#include <reg/udral/physics/kinematics/geodetic/PointVar_0_1.h>
-#include <reg/udral/physics/kinematics/translation/Velocity3Var_0_2.h>
+#include <types/reg/udral/physics/kinematics/geodetic/PointVar_0_1.h>
+#include <types/reg/udral/physics/kinematics/translation/Velocity3Var_0_2.h>
 #include <stdlib.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,

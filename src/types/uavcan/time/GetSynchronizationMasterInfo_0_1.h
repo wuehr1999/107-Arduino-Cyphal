@@ -37,8 +37,8 @@
 
 #include <nunavut/support/serialization.h>
 #include <stdlib.h>
-#include <uavcan/time/TAIInfo_0_1.h>
-#include <uavcan/time/TimeSystem_0_1.h>
+#include <types/uavcan/time/TAIInfo_0_1.h>
+#include <types/uavcan/time/TimeSystem_0_1.h>
 
 static_assert( NUNAVUT_SUPPORT_LANGUAGE_OPTION_TARGET_ENDIANNESS == 1693710260,
               "/tmp/public_regulated_data_types/uavcan/time/510.GetSynchronizationMasterInfo.0.1.dsdl is trying to use a serialization library that was compiled with "
