@@ -15,7 +15,6 @@
 #define NUNAVUT_SUPPORT_SERIALIZATION_H_INCLUDED
 
 #define NUNAVUT_ASSERT(expr) assert(expr)
-#endif
 
 
 #ifdef __cplusplus

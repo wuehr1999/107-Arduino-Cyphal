@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/pnp/cluster/390.AppendEntries.1.0.dsdl
-// Generated at:  2022-12-15 23:14:06.003523 UTC
+// Generated at:  2022-12-15 23:20:52.089505 UTC
 // Is deprecated: no
 // Fixed port-ID: 390
 // Full name:     uavcan.pnp.cluster.AppendEntries

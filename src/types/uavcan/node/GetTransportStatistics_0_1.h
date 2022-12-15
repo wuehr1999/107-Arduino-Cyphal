@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/node/434.GetTransportStatistics.0.1.dsdl
-// Generated at:  2022-12-15 23:14:06.089530 UTC
+// Generated at:  2022-12-15 23:20:52.177224 UTC
 // Is deprecated: no
 // Fixed port-ID: 434
 // Full name:     uavcan.node.GetTransportStatistics

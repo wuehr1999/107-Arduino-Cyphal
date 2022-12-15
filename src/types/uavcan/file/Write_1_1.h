@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/file/409.Write.1.1.dsdl
-// Generated at:  2022-12-15 23:14:06.742869 UTC
+// Generated at:  2022-12-15 23:20:51.982214 UTC
 // Is deprecated: no
 // Fixed port-ID: 409
 // Full name:     uavcan.file.Write

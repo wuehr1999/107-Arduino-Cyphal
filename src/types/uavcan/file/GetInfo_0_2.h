@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/file/405.GetInfo.0.2.dsdl
-// Generated at:  2022-12-15 23:14:06.667659 UTC
+// Generated at:  2022-12-15 23:20:51.934076 UTC
 // Is deprecated: no
 // Fixed port-ID: 405
 // Full name:     uavcan.file.GetInfo

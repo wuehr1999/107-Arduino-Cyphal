@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/diagnostic/8184.Record.1.0.dsdl
-// Generated at:  2022-12-15 23:14:06.465861 UTC
+// Generated at:  2022-12-15 23:20:51.996584 UTC
 // Is deprecated: yes
 // Fixed port-ID: 8184
 // Full name:     uavcan.diagnostic.Record

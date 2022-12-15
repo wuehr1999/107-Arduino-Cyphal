@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/node/7509.Heartbeat.1.0.dsdl
-// Generated at:  2022-12-15 23:14:06.103078 UTC
+// Generated at:  2022-12-15 23:20:52.184134 UTC
 // Is deprecated: no
 // Fixed port-ID: 7509
 // Full name:     uavcan.node.Heartbeat

@@ -37,4 +37,4 @@ find . -type f -exec sed -i 's/<uavcan/<types\/uavcan/g' {} +
 
 echo "Fixing definition of NUNAVUT_ASSERT"
 cd $NUNAVUT_DIR/support
-sed -i -- 's/#define NUNAVUT_SUPPORT_SERIALIZATION_H_INCLUDED/#define NUNAVUT_SUPPORT_SERIALIZATION_H_INCLUDED\n\n#define NUNAVUT_ASSERT(expr) assert(expr)\n#endif\n/g' serialization.h
+sed -i -- 's/#define NUNAVUT_SUPPORT_SERIALIZATION_H_INCLUDED/#define NUNAVUT_SUPPORT_SERIALIZATION_H_INCLUDED\n\n#define NUNAVUT_ASSERT(expr) assert(expr)\n/g' serialization.h

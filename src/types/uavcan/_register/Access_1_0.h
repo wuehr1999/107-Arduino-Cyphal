@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/register/384.Access.1.0.dsdl
-// Generated at:  2022-12-15 23:14:05.669992 UTC
+// Generated at:  2022-12-15 23:20:52.217445 UTC
 // Is deprecated: no
 // Fixed port-ID: 384
 // Full name:     uavcan.register.Access

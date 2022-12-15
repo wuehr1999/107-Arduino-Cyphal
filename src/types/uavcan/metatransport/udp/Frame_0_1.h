@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/metatransport/udp/Frame.0.1.dsdl
-// Generated at:  2022-12-15 23:14:06.585562 UTC
+// Generated at:  2022-12-15 23:20:52.149185 UTC
 // Is deprecated: yes
 // Fixed port-ID: None
 // Full name:     uavcan.metatransport.udp.Frame

@@ -9,7 +9,7 @@
 //
 // Generator:     nunavut-1.9.0 (serialization was enabled)
 // Source file:   /tmp/public_regulated_data_types/uavcan/metatransport/can/ArbitrationID.0.1.dsdl
-// Generated at:  2022-12-15 23:14:06.613336 UTC
+// Generated at:  2022-12-15 23:20:52.113836 UTC
 // Is deprecated: no
 // Fixed port-ID: None
 // Full name:     uavcan.metatransport.can.ArbitrationID
